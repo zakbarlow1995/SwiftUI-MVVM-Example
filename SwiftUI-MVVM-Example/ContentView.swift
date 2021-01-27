@@ -67,7 +67,6 @@ struct ContentView: View {
                 }
             }.navigationBarTitle("Books")
             .navigationBarItems(trailing: Button(action: {
-                print("Fetching books")
                 viewModel.fetchBooks()
             }, label: {
                 Text("Fetch Books")
@@ -79,7 +78,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
             ContentView()
         }
     }
