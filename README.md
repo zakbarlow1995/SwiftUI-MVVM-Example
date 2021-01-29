@@ -19,12 +19,12 @@
 ```swift
     class ViewModel: ObservableObject {
 
-        @Published var property: Model = ...
+        @Published var model: Model = ...
 
     }
 ```
 
-3) Finally, make sure that the `viewModel` instance is marked as `@ObservedObject`
+3) Ensure that the `viewModel` instance is marked as `@ObservedObject`
 
 
 ```swift
@@ -34,6 +34,19 @@
 
         var body: some View {
             ...
+        }
+    }
+```
+
+4) Finally, use the property to set up the bind between the View and View Model
+
+```swift
+    struct ContentView: View {
+
+        @ObservedObject var viewModel = ViewModel()
+
+        var body: some View {
+            Text("\(viewModel.model.property)")
         }
     }
 ```
